@@ -27,6 +27,7 @@ export const globalResetStyle = css`
   ul,
   ol {
     list-style: none;
+    padding-left: 0;
   }
 
   /* Set core body defaults */
@@ -101,12 +102,18 @@ export const globalStyle = css(`
     scroll-behavior: smooth;
   }
 
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar { // check
     width: 0.6rem;
+    background-color: #55607b;
+    display: none;
   }
 
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    border-radius: 20px;
+  body::-webkit-scrollbar-thumb { // check
+    display: none;
+    background-color: #e6f4f1;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 `);
