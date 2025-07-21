@@ -5,13 +5,10 @@ import { darkContrastTextColor, whiteTextColor } from './consts';
 const socialMediaIconTransition = -49;
 
 export const socialMediaStyle = css({
-  height: '12vh',
-  width: '5vw',
   position: 'fixed',
   left: 0,
-  right: '95vw',
   zIndex: 0,
-  bottom: '12vh',
+  bottom: 54,
 });
 
 export const socialMediaIconListStyle = css({
