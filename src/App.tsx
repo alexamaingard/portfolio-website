@@ -1,6 +1,7 @@
 // import { motion, Transition } from 'framer-motion';
 
 import { AboutSection } from './components/AboutSection';
+import { ContactSection } from './components/Contact';
 import { ExperienceSection } from './components/ExperienceSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -36,6 +37,8 @@ export default function App() {
           <AboutSection />
         {/* </motion.div> */}
         <ExperienceSection />
+        {/* @todo consider adding a projects section here for apps/games etc as things pop up */}
+        <ContactSection />
       </main>
       <Footer />
     </>

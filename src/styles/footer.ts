@@ -8,4 +8,5 @@ export const footerStyle = css({
   textAlign: 'center',
   padding: '15px 30px 15px 25px',
   backgroundColor: darkBackgroundColor,
+  fontWeight: 300,
 });
