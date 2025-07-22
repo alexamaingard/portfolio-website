@@ -1,7 +1,7 @@
 // import { motion, Transition } from 'framer-motion';
 
 import { AboutSection } from './components/AboutSection';
-// import { ExperienceSection } from './components/ExperienceSection';
+import { ExperienceSection } from './components/ExperienceSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { IntroPage } from './components/IntroPage';
@@ -35,7 +35,7 @@ export default function App() {
         > */}
           <AboutSection />
         {/* </motion.div> */}
-        {/* <ExperienceSection /> */}
+        <ExperienceSection />
       </main>
       <Footer />
     </>

@@ -20,6 +20,7 @@ export const title2 = 40;
 export const title3 = 32;
 export const subtitle = 24;
 export const mainText = 20;
+export const contentText = 16;
 
 // Weight
 

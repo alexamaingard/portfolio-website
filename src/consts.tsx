@@ -10,11 +10,31 @@ import PythonIcon from './assets/icons/python.svg?react';
 import ReactIcon from './assets/icons/react.svg?react';
 import StorybookIcon from './assets/icons/storybook.svg?react';
 import TypescriptIcon from './assets/icons/typescript.svg?react';
+import SwissFlag from './assets/icons/switzerland.svg?react';
+import AustrianFlag from './assets/icons/austria.svg?react';
+import ArgentinianFlag from './assets/icons/argentina.svg?react';
+import { _ } from './utils';
+import { ExperienceItem, TechExperienceItem } from './interfaces';
 
 export const CONTACT = {
   LINKED_IN: 'https://www.linkedin.com/in/alexa-marie-eliane-maingard-1a641b190',
   EMAIL: 'maingard.alexa@gmail.com',
   GITHUB: 'https://github.com/alexamaingard',
+}
+
+export const COUNTRIES = {
+  CH: {
+    name: _('Switzerland'),
+    flag: <SwissFlag />,
+  },
+  AUT: {
+    name: _('Austria'),
+    flag: <AustrianFlag />,
+  },
+  AR: {
+    name: _('Argentina'),
+    flag: <ArgentinianFlag />,
+  },
 }
 
 export const TECHNOLOGIES = {
@@ -65,5 +85,65 @@ export const TECHNOLOGIES = {
   POSTGRES_SQL: {
     label: 'PostgreSQL',
     icon: <PostgreSQLIcon />,
+  },
+};
+
+export const TECH_EXPERIENCE: Record<string, TechExperienceItem> = {
+  ESAVE: {
+    position: 'Full-Stack Software Developer',
+    company: 'esave ag',
+    location: 'Chur, Graubünden',
+    countryCode: 'CH',
+    startDate: '2024-12-01',
+    endDate: '2025-02-28',
+    periodComment: '3-months-long fixed contract',
+    responsibilities: [
+      'Backend-API development and technical documentation',
+      'API Integration',
+    ],
+    technologies: 'TypeScript, NestJS, SQL, NodeJS, MariaDB, proto3, Swagger, Angular',
+  },
+  TRUSTWISE: {
+    position: 'Software Developer',
+    company: 'trustwise.io ag',
+    location: 'Basel, CH (Remote)',
+    countryCode: 'CH',
+    startDate: '2022-06-01',
+    endDate: '2024-11-30',
+    periodComment: 'Startup Shutdown',
+    responsibilities: [
+      'Frontend development with Typescript, React & Storybook',
+      'Backend Development with Python & Django',
+      'Front & Backend integration (API, Design System, Smart Contracts)',
+      'System architecture participation',
+      'Technical documentation and coaching of new team member',
+      'Responsible for the development of the Frontend Design System',
+      'Responsible for the development of the company\'s website',
+    ],
+    technologies: 'TypeScript, React, Storybook, Python, Django, CSS, HTML, EmotionCSS, Yaml, Cypress testing, Gatsby',
+  },
+};
+
+export const NON_TECH_EXPERIENCE: Record<string, ExperienceItem> = {
+  TEACHER: {
+    position: 'Self-employed Teacher',
+    description: `
+      Tutored students in Math, English, and Spanish — from exam prep to language fluency.
+      Focused on clarity, confidence, and adapting to each learner's style.
+    `,
+  },
+  SOCIAL_MEDIA: {
+    position: 'Social Media Marketing Manager',
+    description: `
+      Ran social media and campaigns for two bars, while working in service.
+      Blended content, events, and real-life experience to build stronger customer connections.
+    `,
+  },
+  FASHION: {
+    position: 'Founder & Entrepreneur',
+    description: `
+      Founded and ran a women's accessories brand — from product design to marketing and sales.
+      Wore all the hats: launching campaigns, spotting trends, building customer trust, and managing production.
+    `,
   },
 };

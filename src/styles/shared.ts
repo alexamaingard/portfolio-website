@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { lightTextColor, title2 } from './consts';
+import { lightTextColor, subtitle, title2, whiteTextColor } from './consts';
 
 export const pageMarginStyle = css({
   paddingInline: 140,
@@ -18,4 +18,10 @@ export const sectionTitleStyle = css({
   fontSize: title2,
   fontWeight: 500,
   width: '100%',
+});
+
+export const sectionSubtitleStyle = css({
+  color: whiteTextColor,
+  fontSize: subtitle,
+  fontWeight: 300,
 });

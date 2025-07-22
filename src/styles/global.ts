@@ -14,6 +14,7 @@ export const globalResetStyle = css`
   h2,
   h3,
   h4,
+  h5,
   p,
   ul,
   figure,
@@ -75,7 +76,7 @@ export const globalResetStyle = css`
 `;
 
 
-// @todo use constants here too
+// @todo use constants here too and remove unused
 export const globalStyle = css(`
   :root {
     --background: #8892b0;
@@ -85,10 +86,6 @@ export const globalStyle = css(`
     --page-gap: 150px;
     --inner-page-gap: 20px;
     --page-content-width: 55vw;
-    --h2-font-size: 2.4rem;
-    --h2-font-weigth: 500;
-    --p-font-size: 1.2rem;
-    --image-offset: -0.75rem;
   }
 
   body {
