@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import { darkContrastTextColor, whiteTextColor } from './consts';
 
-const socialMediaIconTransition = -49;
+// const socialMediaIconTransition = -49;
 
 export const socialMediaStyle = css({
   position: 'fixed',
@@ -28,7 +28,7 @@ export const iconItemStyle = (level = 1) => css({
   transition: 'transform 0.3s ease',
   '&:hover': {
     fill: whiteTextColor,
-    transition: `all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)`,
-    transform: `translateY(${socialMediaIconTransition * level}px)`, // check this transition and clickable area
+    // transition: `all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)`,
+    // transform: `translateY(${socialMediaIconTransition * level}px)`, // check this transition and clickable area
   },
 });
