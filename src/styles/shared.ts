@@ -3,7 +3,8 @@ import { css } from '@emotion/react';
 import { lightTextColor, subtitle, title2, whiteTextColor } from './consts';
 
 export const pageMarginStyle = css({
-  paddingInline: 140,
+  paddingInline: 280,
+  // @todo add max content width
 });
 
 export const sectionSpacingStyle = css({

@@ -6,6 +6,7 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { IntroPage } from './components/IntroPage';
+import { PortfolioSection } from './components/PortfolioSection';
 import { SocialMedia } from './components/SocialMedia';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { pageMarginStyle } from './styles/shared';
@@ -38,6 +39,7 @@ export default function App() {
         {/* </motion.div> */}
         <ExperienceSection />
         {/* @todo consider adding a projects section here for apps/games etc as things pop up */}
+        <PortfolioSection />
         <ContactSection />
       </main>
       <Footer />

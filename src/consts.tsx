@@ -14,7 +14,7 @@ import SwissFlag from './assets/icons/switzerland.svg?react';
 import AustrianFlag from './assets/icons/austria.svg?react';
 import ArgentinianFlag from './assets/icons/argentina.svg?react';
 import { _ } from './utils';
-import { ExperienceItem, TechExperienceItem } from './interfaces';
+import { ExperienceItem, PortfolioItem, TechExperienceItem } from './interfaces';
 
 export const CONTACT = {
   LINKED_IN: 'https://www.linkedin.com/in/alexa-marie-eliane-maingard-1a641b190',
@@ -147,3 +147,16 @@ export const NON_TECH_EXPERIENCE: Record<string, ExperienceItem> = {
     `,
   },
 };
+
+export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
+  {
+    name: 'Migraine Witch',
+    description: `
+      Web app for logging migraine attacks and their symptoms, triggers, etc.
+      It's main purpose is to help migraine patients understand their condition and pain better.
+    `,
+    imageSrc: '/images/migraineWitchHomepage.png',
+    imageAlt: 'Migraine Witch Project Homepage',
+    url: 'https://github.com/alexamaingard/migraine-witch',
+  },
+];

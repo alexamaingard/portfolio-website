@@ -1,9 +1,8 @@
 import { css, keyframes } from '@emotion/react';
 
 import { darkContrastTextColor, subtitle, title1, title2, title3, whiteTextColor } from './consts';
-import { pageMarginStyle } from './shared';
 
-export const introPageStyle = css(pageMarginStyle, {
+export const introPageStyle = css({
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',

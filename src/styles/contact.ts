@@ -1,9 +1,8 @@
 import { css } from '@emotion/react';
 
-import { pageMarginStyle } from './shared';
 import { darkBackgroundColor, lightTextColor } from './consts';
 
-export const contactSectionStyle = css(pageMarginStyle, {
+export const contactSectionStyle = css({
 });
 
 export const contactSectionContentStyle = css({

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 import { contentText, darkContrastTextColor, lightTextColor, mainText } from './consts';
-import { pageMarginStyle, sectionSpacingStyle } from './shared';
+import { sectionSpacingStyle } from './shared';
 
 const experienceCardStyle = css({
   backgroundColor: lightTextColor,
@@ -16,7 +16,7 @@ const experienceCardStyle = css({
 });
 
 // @todo add media queries and make responsive
-export const experienceSectionStyle = css(pageMarginStyle, sectionSpacingStyle, {
+export const experienceSectionStyle = css(sectionSpacingStyle, {
   display: 'flex',
   flexDirection: 'column',
   fontSize: mainText,

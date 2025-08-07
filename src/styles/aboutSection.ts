@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 
-import { pageMarginStyle, sectionSpacingStyle } from './shared';
-import { darkBackgroundColor, mainText, title3, whiteTextColor } from './consts';
+import { sectionSpacingStyle } from './shared';
+import { darkBackgroundColor, whiteTextColor } from './consts';
 
 // @todo make responsive
 
-export const aboutSectionStyle = css(pageMarginStyle, sectionSpacingStyle, {
+export const aboutSectionStyle = css(sectionSpacingStyle, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -28,7 +28,7 @@ export const aboutInfoStyle = css({
 export const aboutInfoContentStyle = css({
   display: 'flex',
   flexDirection: 'column',
-  fontSize: mainText,
+  fontSize: 18,
   fontWeight: 300,
   maxWidth: 700, // @todo revise
   paddingBlock: 40,
@@ -51,14 +51,6 @@ export const aboutSectionPictureContainerStyle = css({
     margin: '-20px 0 0 -20px',
     width: 300,
     height: 300,
-  },
-});
-
-export const aboutSectionTechnologiesStyle = css({
-  h3: {
-    color: whiteTextColor,
-    fontSize: title3,
-    fontWeight: 300,
   },
 });
 
