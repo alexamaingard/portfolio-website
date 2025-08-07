@@ -5,7 +5,6 @@ import { sectionSpacingStyle } from './shared';
 
 const experienceCardStyle = css({
   backgroundColor: lightTextColor,
-  opacity: 0.9,
   padding: 20,
   borderRadius: 12,
   'h4, h5': {
@@ -24,7 +23,7 @@ export const experienceSectionStyle = css(sectionSpacingStyle, {
 });
 
 export const experienceSectionContentStyle = css({
-  paddingBlock: 40,
+  paddingTop: 40,
   fontSize: mainText,
 });
 
@@ -72,7 +71,6 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
     position: 'absolute',
     top: 28,
     zIndex: 2,
-    opacity: 0.9,
     borderStyle: 'solid',
     transition: 'border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
     ...(alignRight
@@ -191,5 +189,5 @@ export const experienceSectionNonTechItemStyle = css(experienceCardStyle, {
   display: 'flex',
   flexDirection: 'column',
   gap: 12,
-  opacity: 0.8,
+  opacity: 0.9,
 });

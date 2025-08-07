@@ -6,6 +6,7 @@ export const portfolioSectionStyle = css({
   display: 'flex',
   flexDirection: 'column',
   gap: 20,
+  paddingBlock: 100,
 });
 
 export const portfolioSectionProjectsListStyle = css({

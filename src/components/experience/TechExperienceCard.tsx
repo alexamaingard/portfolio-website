@@ -67,7 +67,7 @@ export const TechExperienceCard = ({
             {/* Back side */}
             <div css={[experienceSectionTechItemCardStyle, experienceSectionFlipCardBackStyle]}>
               <h4>More about {company}</h4>
-              <div>Additional company details, or recommendations can go here.</div>
+              {/* <div>Additional company details, or recommendations can go here.</div> */}
             </div>
           </div>
         </div>
