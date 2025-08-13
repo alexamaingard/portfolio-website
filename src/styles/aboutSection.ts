@@ -1,7 +1,8 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
-import { sectionSpacingStyle } from './shared';
+import { descriptionStyle, sectionSpacingStyle } from './shared';
 import { darkBackgroundColor, whiteTextColor } from './consts';
+import { mediaQueries as mq } from './mediaQueries';
 
 // @todo make responsive
 
@@ -11,11 +12,12 @@ export const aboutSectionStyle = css(sectionSpacingStyle, {
   alignItems: 'flex-start',
 });
 
-export const aboutInfoStyle = css({
+export const aboutInfoStyle = (theme: Theme) => css({
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'space-between',
   width: '100%',
+  color: theme.descriptionColor,
   gap: 100, // @todo check
   svg: {
     width: 30,
@@ -23,15 +25,25 @@ export const aboutInfoStyle = css({
     marginInline: 4,
     verticalAlign: 'text-bottom',
   },
+  [mq.lt.l]: {
+    flexDirection: 'column-reverse',
+    alignItems: 'center',
+    gap: 0,
+  },
 });
 
-export const aboutInfoContentStyle = css({
+export const aboutInfoContentStyle = css(descriptionStyle, {
   display: 'flex',
   flexDirection: 'column',
-  fontSize: 18,
-  fontWeight: 300,
-  maxWidth: 700, // @todo revise
+  // fontSize: 18,
+  // fontWeight: 300,
   paddingBlock: 40,
+  [mq.gt.l]: {
+    maxWidth: 700,
+  },
+  [mq.lt.l]: {
+    paddingBlock: 30,
+  },
 });
 
 export const aboutInfoPersonalIntroStyle = css({
@@ -51,23 +63,80 @@ export const aboutSectionPictureContainerStyle = css({
     margin: '-20px 0 0 -20px',
     width: 300,
     height: 300,
+    [mq.l]: {
+      width: 250,
+      height: 250,
+      margin: '-15px 0 0 -15px',
+    },
+    [mq.lt.l]: {
+      width: 200,
+      height: 200,
+      margin: '-15px 0 0 -15px',
+    },
   },
+  [mq.l]: {
+    width: 250,
+    height: 250,
+  },
+  [mq.lt.l]: {
+    width: 200,
+    height: 200,
+  },
+});
+
+export const aboutInfoPersonalIntroHobbiesContainerStyle = (theme: Theme) => css({
+  display: 'flex',
+  width: '100%',
+  [mq.lt.l]: {
+    justifyContent: 'center',
+  },
+  '>svg:not(:last-of-type)': {
+    path: {
+      fill: theme.descriptionColor,
+    }
+  },
+  '>svg:last-of-type, >svg:first-of-type': {
+    path: {
+      stroke: theme.descriptionColor,
+    }
+  },
+});
+
+export const aboutSectionTechListContainerStyle = css({
+  width: '100%',
 });
 
 export const aboutSectionTechListStyle = css({
   display: 'flex',
-  gap: 20,
   paddingBlock: 30,
+  gap: 18,
+  flexWrap: 'wrap',
+  [mq.lt.l]: {
+
+  },
 });
 
 export const aboutSectionTechListItemStyle = css({
   position: 'relative',
+  flex: '0 0 auto',
   '>svg': {
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
     borderRadius: 16,
     '&:hover': {
       transform: 'scale(1.2)',
+    },
+    [mq.lt.l]: {
+      width: 60,
+      height: 60,
+    },
+    [mq.s]: {
+      width: 50,
+      height: 50,
+    },
+    [mq.lt.s]: {
+      width: 40,
+      height: 40,
     },
   },
   '&:hover': {
@@ -78,9 +147,9 @@ export const aboutSectionTechListItemStyle = css({
   },
 });
 
-export const aboutSectionTechItemTooltipStyle = css({
+export const aboutSectionTechItemTooltipStyle = (theme: Theme) => css({
   visibility: 'hidden',
-  backgroundColor: darkBackgroundColor,
+  backgroundColor: theme.darkBackgroundColor,
   color: '#fff',
   textAlign: 'center',
   borderRadius: 4,
@@ -105,59 +174,3 @@ export const aboutSectionTechItemTooltipStyle = css({
     borderColor: `transparent transparent ${darkBackgroundColor} transparent`,
   }
 })
-
-// @media screen and (max-width: 1037px) {
-//   .about-me-info {
-//     flex-direction: column-reverse;
-//   }
-//   .about-info-left {
-//     width: var(--page-content-width);
-//   }
-//   #display,
-//   #display-pic {
-//     display: none;
-//   }
-//   #no-display,
-//   #no-display-pic {
-//     display: flex;
-//   }
-// }
-
-// @media screen and (max-width: 537px) {
-//   #no-display,
-//   #no-display-pic {
-//     width: calc(var(--circle-size) * 0.9);
-//     height: calc(var(--circle-size) * 0.9);
-//   }
-//   .tech-lists {
-//     flex-direction: column;
-//     gap: 0;
-//   }
-//   .about-info-left ul {
-//     padding-top: 0;
-//   }
-// }
-
-// @media screen and (max-width: 486px) {
-//   #no-display,
-//   #no-display-pic {
-//     width: calc(var(--circle-size) * 0.8);
-//     height: calc(var(--circle-size) * 0.8);
-//   }
-// }
-
-// @media screen and (max-width: 440px) {
-//   #no-display,
-//   #no-display-pic {
-//     width: calc(var(--circle-size) * 0.7);
-//     height: calc(var(--circle-size) * 0.7);
-//   }
-// }
-
-// @media screen and (max-width: 375px) {
-//   #no-display,
-//   #no-display-pic {
-//     width: calc(var(--circle-size) * 0.6);
-//     height: calc(var(--circle-size) * 0.6);
-//   }
-// }

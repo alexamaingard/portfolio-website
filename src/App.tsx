@@ -1,5 +1,4 @@
-// import { motion, Transition } from 'framer-motion';
-
+import { useState } from 'react';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/Contact';
 import { ExperienceSection } from './components/ExperienceSection';
@@ -10,86 +9,38 @@ import { PortfolioSection } from './components/PortfolioSection';
 import { SocialMedia } from './components/SocialMedia';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { pageMarginStyle } from './styles/shared';
+import { ModeSidebar } from './components/mode/ModeSidebar';
+import { ThemeProvider } from '@emotion/react';
+import { calmTheme, playfulTheme } from './styles/themes';
+import { ConstellationBackground } from './components/ConstellationBg';
 
 export default function App() {
-  // const motionTransitionProps: Transition<unknown> | undefined = {
-  //   duration: 1.5,
-  //   delay: 0.3,
-  //   ease: "easeInOut",
-  // };
+  const [mode, setMode] = useState<'calm' | 'playful'>('calm');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const theme = mode === 'calm' ? calmTheme : playfulTheme;
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
+      <ModeSidebar
+        mode={mode}
+        setMode={setMode}
+        isOpen={sidebarOpen}
+        toggleOpen={() => setSidebarOpen(!sidebarOpen)}
+      />
+      {mode === 'playful' && <ConstellationBackground />}
       <main css={pageMarginStyle}>
         <SocialMedia />
         <IntroPage />
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1.5,
-            delay: 0.3,
-            ease: "easeInOut",
-          }}
-          viewport={{ once: true }}
-        > */}
           <AboutSection />
-        {/* </motion.div> */}
         <ExperienceSection />
         {/* @todo consider adding a projects section here for apps/games etc as things pop up */}
         <PortfolioSection />
         <ContactSection />
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
-
-// export const App = () => {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <SocialMedia />
-//       <ProfilePage />
-      // <motion.div
-      //   initial={{ opacity: 0 }}
-      //   whileInView={{ opacity: 1 }}
-      //   transition={{
-      //     duration: 1.5,
-      //     delay: 0.1,
-      //     ease: "easeInOut"
-      //   }}
-      //   viewport={{ once: true }}
-      // >
-//         <AboutPage />
-//       </motion.div>
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1 }}
-//         transition={{
-//           duration: 1,
-//           delay: 0.1,
-//           ease: "easeInOut"
-//         }}
-//         viewport={{ once: true }}
-//       >
-//         <Portfolio />
-//       </motion.div>
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1 }}
-//         transition={{
-//           duration: 1.5,
-//           delay: 0.1,
-//           ease: "easeInOut"
-//         }}
-//         viewport={{ once: true }}
-//       >
-//         <Contact />
-//       </motion.div>
-//       <Footer />
-//     </div>
-//   );
-// };

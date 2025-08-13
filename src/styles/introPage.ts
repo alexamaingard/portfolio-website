@@ -1,39 +1,102 @@
-import { css, keyframes } from '@emotion/react';
+import { css, keyframes, Theme } from '@emotion/react';
 
-import { darkContrastTextColor, subtitle, title1, title2, title3, whiteTextColor } from './consts';
+import { subtitle, title1, title2, title3, whiteTextColor } from './consts';
+import { mediaQueries as mq, smallSmartphoneMediaQuery } from './mediaQueries';
+import { title2Style } from './shared';
 
 export const introPageStyle = css({
-  height: '100vh',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  height: '100vh',
+  minHeight: 600,
+  maxWidth: 1168,
+  [mq.lt.s]: {
+    paddingTop: 120,
+  },
 });
 
 export const introPageInfoStyle = css({
   display: 'flex',
   flexDirection: 'column',
   color: whiteTextColor,
-  h1: {
-    fontSize: title1,
-    fontWeight: 600,
-  },
-  h2: {
-    fontSize: title2,
-    fontWeight: 600,
-    color: darkContrastTextColor,
-    // textDecoration: `4px ${darkContrastTextColor} underline`,
-    // textUnderlineOffset: 10,
-  },
-  h3: {
-    fontSize: title3,
-    fontWeight: 300,
+  [smallSmartphoneMediaQuery]: {
+    gap: 8,
   },
 });
 
-export const introPageDescriptionStyle = css({
+export const introPageMainTitleStyle = (theme: Theme) => css({
+  fontSize: title1,
+  fontWeight: 600,
+  whiteSpace: 'normal',
+  wordBreak: 'keep-all',
+  color: theme.highlight,
+  'h1 span': {
+    whiteSpace: 'nowrap',
+  },
+  [mq.lt.l]: {
+    fontWeight: 500,
+  },
+  [mq.m]: {
+    fontSize: 70,
+  },
+  [mq.lt.m]: {
+    whiteSpace: 'normal',
+    wordBreak: 'keep-all',
+    span: {
+      display: 'inline-block',
+    },
+  },
+  [mq.s]: {
+    fontSize: 60,
+  },
+  [mq.lt.s]: {
+    fontSize: 55,
+  },
+  [smallSmartphoneMediaQuery]: {
+    fontSize: 48,
+  },
+});
+
+export const introPageSubtitleStyle = (theme: Theme) => css(title2Style, {
+  fontSize: title2,
+  fontWeight: 600,
+  color: theme.greetingColor,
+  [smallSmartphoneMediaQuery]: {
+    fontSize: 20,
+  },
+});
+
+export const introPageGreetingStyle = (theme: Theme) => css({
+  fontSize: title3,
+  fontWeight: 300,
+  color: theme.greetingColor,
+  [mq.lt.l]: {
+  },
+  [mq.m]: {
+    fontSize: 28,
+  },
+  [mq.s]: {
+    fontSize: 22,
+  },
+  [mq.lt.s]: {
+    fontSize: 20,
+  },
+  [smallSmartphoneMediaQuery]: {
+    fontSize: 18,
+  },
+});
+
+export const introPageDescriptionStyle = (theme: Theme) => css({
   fontSize: subtitle,
   fontWeight: 300,
-  color: 'black',
+  color: theme.introColor,
+  [mq.m]: {
+    fontSize: 20,
+  },
+  [mq.lt.m]: {
+    fontSize: 18,
+  },
 });
 
 // Letter fade-in (typing)
@@ -70,31 +133,3 @@ export const letterWithCursorStyle = (i: number, total: number) => css`
     animation-iteration-count: ${i === total - 1 ? 3 : 1};
   }
 `;
-
-// export const letterWithCursorStyle = (i: number, total: number) => css({
-//   display: 'inline-block',
-//   opacity: 0,
-//   position: 'relative',
-//   animation: `${typeIn} 0.3s ease forwards`,
-//   animationDelay: `${i * 0.15}s`,
-//   '&::after': {
-//     content: '""',
-//     position: 'absolute',
-//     right: -2,
-//     top: 0,
-//     width: 2,
-//     height: '1.1em',
-//     background: whiteTextColor,
-//     opacity: 0,
-//     animation: `${blink} ${i === total - 1 ? '1s' : '0.3s'} step-end`,
-//     animationDelaY: `${i * 0.15}s`,
-//     animationFillMode: 'forwards',
-//     animationIterationCount: i === total - 1 ? 3 : 1,
-//   },
-// });
-
-// @media screen and (max-width: 520px) {
-//   .profile-info {
-//     width: 36ch;
-//   }
-// }

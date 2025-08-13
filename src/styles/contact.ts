@@ -1,25 +1,25 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
-import { darkBackgroundColor, lightTextColor } from './consts';
+import { lightTextColor } from './consts';
 
 export const contactSectionStyle = css({
 });
 
-export const contactSectionContentStyle = css({
+export const contactSectionContentStyle = (theme: Theme) => css({
   display: 'flex',
   flexDirection: 'column',
   gap: 40,
   paddingBlock: 40,
   fontSize: 18,
+  color: theme.descriptionColor,
   fontWeight: 300,
   '>button': {
     borderRadius: 12,
     color: lightTextColor,
     border: 'none',
-    background: darkBackgroundColor,
+    background: theme.darkBackgroundColor,
     width: 'fit-content',
     padding: '8px 20px',
     cursor: 'pointer',
-    // background: 'none',
   },
 });

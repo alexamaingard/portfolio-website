@@ -1,18 +1,22 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
 import { lightTextColor, mainText } from './consts';
+import { sectionSpacingStyle } from './shared';
+import { mediaQueries as mq } from './mediaQueries';
 
-export const portfolioSectionStyle = css({
+export const portfolioSectionStyle = css(sectionSpacingStyle, {
   display: 'flex',
   flexDirection: 'column',
   gap: 20,
-  paddingBlock: 100,
 });
 
 export const portfolioSectionProjectsListStyle = css({
   display: 'flex',
   flexDirection: 'column',
   paddingBlock: '40px 100px',
+  [mq.lt.m]: {
+    paddingBlock: '40px 0',
+  },
 });
 
 export const portfolioSectionProjectItemStyle = (alignRight: boolean) => css({
@@ -25,9 +29,13 @@ export const portfolioSectionProjectItemStyle = (alignRight: boolean) => css({
   gap: 40,
   margin: alignRight ? '0 20px 0 0' : '0 0 0 20px',
   paddingBlock: 40,
+  [mq.lt.l]: {
+    flexDirection: 'column-reverse',
+    marginLeft: 0,
+  },
 });
 
-export const portfolioSectionProjectItemInfoStyle = css({
+export const portfolioSectionProjectItemInfoStyle = (theme: Theme) => css({
   display: 'flex',
   flexWrap: 'wrap',
   flexDirection: 'column',
@@ -38,7 +46,14 @@ export const portfolioSectionProjectItemInfoStyle = css({
     fontWeight: 400,
     color: lightTextColor,
   },
+  color: theme.descriptionColor,
   fontSize: 16,
+  [mq.l]: {
+    maxWidth: 500,
+  },
+  [mq.lt.l]: {
+    maxWidth: 'unset',
+  },
 });
 
 export const portfolioSectionProjectItemInfoUrlStyle = css({
@@ -54,8 +69,29 @@ export const portfolioSectionProjectItemInfoUrlStyle = css({
 
 const portfolioImageSize = css({
   width: 450,
+  minWidth: 450,
   height: 250,
   borderRadius: 4,
+  [mq.l]: {
+    width: 350,
+    minWidth: 350,
+    height: 210,
+  },
+  [mq.lt.l]: {
+    width: 270,
+    minWidth: 270,
+    height: 175,
+  },
+  [mq.lt.m]: {
+    width: 270,
+    minWidth: 270,
+    height: 175,
+  },
+  [mq.lt.xs]: {
+    width: 240,
+    minWidth: 240,
+    height: 160,
+  },
 });
 
 const imageFrameOffset = -20;
@@ -76,7 +112,14 @@ export const portfolioSectionProjectItemImageWrapperStyle = css({
   '&::after': {
     bottom: imageFrameOffset,
     right: imageFrameOffset,
-  }
+    [mq.lt.l]: {
+      right: 'unset',
+      left: -imageFrameOffset,
+    },
+  },
+  [mq.lt.l]: {
+    marginLeft: 24,
+  },
 });
 
 export const portfolioSectionProjectItemImageStyle = css(portfolioImageSize, {

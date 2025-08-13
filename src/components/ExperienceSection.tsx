@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react';
 import { NON_TECH_EXPERIENCE, TECH_EXPERIENCE } from '../consts';
 import {
   experienceSectionStyle,
@@ -11,9 +12,11 @@ import { NonTechExperienceCard } from './experience/NonTechExperienceCard';
 import { TechExperienceCard } from './experience/TechExperienceCard';
 
 export const ExperienceSection = () => {
+  const theme = useTheme();
+
   return (
     <section id="experience" css={experienceSectionStyle}>
-      <h2 css={sectionTitleStyle}>Experience</h2>
+      <h2 css={sectionTitleStyle(theme)}>Experience</h2>
       <div css={experienceSectionContentStyle}>
         <ul css={experienceSectionTechListStyle}>
           {Object.entries(TECH_EXPERIENCE).map(([key, value], index) => (

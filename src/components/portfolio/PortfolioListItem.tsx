@@ -7,6 +7,7 @@ import {
   portfolioSectionProjectItemStyle,
 } from '../../styles/portfolioSection';
 import GithubIcon from '../../assets/icons/github.svg?react';
+import { useTheme } from '@emotion/react';
 
 export const PortfolioListItem = ({
   name,
@@ -17,10 +18,11 @@ export const PortfolioListItem = ({
   index,
 }: PortfolioItem & { index: number }) => {
   const alignRight = !(index % 2);
+  const theme = useTheme();
 
   return (
     <li css={portfolioSectionProjectItemStyle(alignRight)}>
-      <div css={portfolioSectionProjectItemInfoStyle}>
+      <div css={portfolioSectionProjectItemInfoStyle(theme)}>
         <h4>{name}</h4>
         <div>{description}</div>
         <a href={url} target="_blank" rel="noreferrer" css={portfolioSectionProjectItemInfoUrlStyle}>

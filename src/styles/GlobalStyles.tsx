@@ -1,5 +1,15 @@
-import { css, Global } from '@emotion/react';
+import { css, Global, useTheme } from '@emotion/react';
+import { globalResetStyle, globalStyleBase } from './global';
 
-import { globalResetStyle, globalStyle } from './global';
+export const GlobalStyles = () => {
+  const theme = useTheme();
 
-export const GlobalStyles = () => <Global styles={css(globalResetStyle, globalStyle)} />;
+  return (
+    <Global
+      styles={css(
+        globalResetStyle,
+        globalStyleBase(theme)
+      )}
+    />
+  );
+};

@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
 export const globalResetStyle = css`
   /* Box sizing rules */
@@ -84,8 +84,6 @@ export const globalStyle = css(`
     --custom-cyan: rgb(136, 255, 255);
     --custom-cyan-low-op: rgb(136, 255, 255, 0.1);
     --page-gap: 150px;
-    --inner-page-gap: 20px;
-    --page-content-width: 55vw;
   }
 
   body {
@@ -93,7 +91,11 @@ export const globalStyle = css(`
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: var(--background);
+    min-height: 100vh;
+    position: relative;
   }
+
+
 
   html {
     scroll-behavior: smooth;
@@ -114,3 +116,58 @@ export const globalStyle = css(`
     border-bottom-right-radius: 20px;
   }
 `);
+
+export const globalStyleBase = (theme: Theme) => css`
+  :root {
+    --page-gap: 150px;
+  }
+
+  /* Calm waves animation */
+  @keyframes waveMove {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1000px; }
+  }
+
+  /* Playful bubbles animation */
+  @keyframes bubbleFloat {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(-200px) translateX(100px); opacity: 0; }
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: ${theme.background};
+    color: ${theme.text};
+    min-height: 100vh;
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  /* Mode-specific background layers */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+
+  ${theme.backgroundLayer === 'calm-waves' &&
+    css`
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,0.05) 20%, transparent 80%),
+        url('data:image/svg+xml;utf8,<svg width="1440" height="363" xmlns="http://www.w3.org/2000/svg"><path fill="%23a7d8d8" fill-opacity="0.15" d="M0,160L48,181.3C96,203,192,245,288,266.7C384,288,480,288,576,256C672,224,768,160,864,144C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L0,320Z"></path></svg>');
+      background-position: left bottom;
+      background-repeat: repeat-x;
+      background-size: 100% auto;
+    `}
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+`;

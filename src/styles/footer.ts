@@ -1,12 +1,9 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
-import { darkBackgroundColor } from './consts';
-
-export const footerStyle = css({
+export const footerStyle = (theme: Theme) => css({
   width: '100%',
-  bottom: 0,
   textAlign: 'center',
   padding: '15px 30px 15px 25px',
-  backgroundColor: darkBackgroundColor,
+  backgroundColor: theme.darkBackgroundColor,
   fontWeight: 300,
 });

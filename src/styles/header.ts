@@ -1,10 +1,11 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
-import { darkBackgroundColor, lightContrastTextColor, lightTextColor } from './consts';
+import { lightTextColor } from './consts';
+import { mediaQueries as mq } from './mediaQueries';
 
 // @todo make responsive
 
-export const headerStyle = css({
+export const headerStyle = (theme: Theme) => css({
   display: 'flex',
   justifyContent: 'space-between',
   padding: '15px 30px 15px 25px',
@@ -12,8 +13,8 @@ export const headerStyle = css({
   zIndex: 100,
   position: 'fixed',
   height: 'fit-content',
-  width: '100vw',
-  backgroundColor: darkBackgroundColor,
+  width: '100%',
+  backgroundColor: theme.darkBackgroundColor,
   fontWeight: 300,
   a: {
     textDecoration: 'none',
@@ -27,7 +28,7 @@ export const headerLogoStyle = css({
   fontSize: 24,
 });
 
-export const headerMenuListStyle = css({
+export const headerMenuListStyle = (theme: Theme) => css({
   display: 'flex',
   justifyContent: 'center',
   gap: 10,
@@ -37,7 +38,10 @@ export const headerMenuListStyle = css({
     display: 'flex',
     alignItems: 'flex-end',
     '>a:hover': {
-      color: lightContrastTextColor, // @todo fix color ?
+      color: theme.accent,
     },
+  },
+  [mq.lt.s]: {
+    display: 'none', // @todo remove and introduce mobile menu
   },
 });

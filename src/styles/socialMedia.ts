@@ -1,6 +1,4 @@
-import { css } from '@emotion/react';
-
-import { darkContrastTextColor, whiteTextColor } from './consts';
+import { css, Theme } from '@emotion/react';
 
 // const socialMediaIconTransition = -49;
 
@@ -20,15 +18,13 @@ export const socialMediaIconListStyle = css({
   gap: 10,
 });
 
-export const iconItemStyle = (level = 1) => css({
+export const iconItemStyle = (theme: Theme) => css({
   width: 32,
   height: 32,
   minWidth: 24,
-  fill: darkContrastTextColor,
+  fill: theme.iconBackground,
   transition: 'transform 0.3s ease',
   '&:hover': {
-    fill: whiteTextColor,
-    // transition: `all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)`,
-    // transform: `translateY(${socialMediaIconTransition * level}px)`, // check this transition and clickable area
+    fill: theme.highlight,
   },
 });
