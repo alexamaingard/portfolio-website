@@ -1,5 +1,4 @@
 import { useTheme } from '@emotion/react';
-
 import { introPageDescriptionStyle, introPageGreetingStyle, introPageInfoStyle, introPageMainTitleStyle, introPageStyle, introPageSubtitleStyle, letterWithCursorStyle } from '../styles/introPage';
 
 export const IntroPage = () => {
@@ -10,18 +9,11 @@ export const IntroPage = () => {
     <section id="profile" css={introPageStyle}>
       <div css={introPageInfoStyle}>
           <h3 css={introPageGreetingStyle(theme)}>Hello, I'm</h3>
-          {/* <h1 css={introPageMainTitleStyle(theme)}>
-            {nameLetters.map((char, i) => (
-              <span key={i} css={letterWithCursorStyle(i, nameLetters.length)}>
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </h1> */}
           <h1 css={introPageMainTitleStyle(theme)}>
             {"Alexa Maingard".split(" ").map((word, wIndex, arr) => (
               <span key={wIndex} style={{ display: "inline-block" }}>
                 {word.split("").map((char, i) => (
-                  <span key={i} css={letterWithCursorStyle(i + wIndex * word.length, nameLetters.length)}>
+                  <span key={i} css={letterWithCursorStyle(i + wIndex * word.length, nameLetters.length + 2)}>
                     {char}
                   </span>
                 ))}
