@@ -17,7 +17,7 @@ import { _ } from './utils';
 import { ExperienceItem, PortfolioItem, TechExperienceItem } from './interfaces';
 
 export const CONTACT = {
-  LINKED_IN: 'https://www.linkedin.com/in/alexa-marie-eliane-maingard-1a641b190',
+  LINKED_IN: 'https://www.linkedin.com/in/alexa-marie-eliane-maingard',
   EMAIL: 'maingard.alexa@gmail.com',
   GITHUB: 'https://github.com/alexamaingard',
 }

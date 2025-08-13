@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import { contentText, darkContrastTextColor, lightTextColor, mainText } from './consts';
 import { sectionSpacingStyle } from './shared';
+import { mediaQueries as mq } from './mediaQueries';
 
 const experienceCardStyle = css({
   backgroundColor: lightTextColor,
@@ -14,7 +15,6 @@ const experienceCardStyle = css({
   fontSize: contentText,
 });
 
-// @todo add media queries and make responsive
 export const experienceSectionStyle = css(sectionSpacingStyle, {
   display: 'flex',
   flexDirection: 'column',
@@ -31,7 +31,6 @@ export const experienceSectionTechListStyle = css({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: 1200, // @todo consider defining globally
   margin: '0 auto',
   gap: 80,
   '&::before': {
@@ -41,10 +40,19 @@ export const experienceSectionTechListStyle = css({
     bottom: 0,
     left: '50%',
     width: 6,
-    backgroundColor: darkContrastTextColor,
+    backgroundColor: lightTextColor,
     transform: 'translateX(-50%)',
     zIndex: 0,
     borderRadius: 12,
+    [mq.lt.l]: {
+      left: 12,
+    },
+  },
+  [mq.lt.l]: {
+    gap: 40,
+  },
+  [mq.lt.s]: {
+    gap: 30,
   },
 });
 
@@ -53,6 +61,7 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
   justifyContent: alignRight ? 'flex-end' : 'flex-start',
   position: 'relative',
   width: '100%',
+  color: 'black',
   zIndex: 1,
   '&::before': {
     content: '""',
@@ -62,9 +71,17 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
     transform: 'translateX(-50%)',
     width: 25,
     height: 25,
-    backgroundColor: darkContrastTextColor,
+    backgroundColor: lightTextColor,
     borderRadius: '50%',
     zIndex: 2,
+    [mq.lt.l]: {
+      left: -32.5,
+      justifyContent: 'flex-start',
+    },
+  },
+  [mq.lt.l]: {
+    marginLeft: 46,
+    width: 'auto',
   },
   '&::after': {
     content: '""',
@@ -73,6 +90,9 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
     zIndex: 2,
     borderStyle: 'solid',
     transition: 'border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+    [mq.lt.l]: {
+      left: 12,
+    },
     ...(alignRight
       ? {
           left: 'calc(50% + 30px)',
@@ -84,6 +104,12 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
           borderWidth: '10px 0 10px 10px',
           borderColor: `transparent transparent transparent ${lightTextColor}`,
         }),
+    [mq.lt.l]: {
+      left: -9.5,
+      right: 'unset',
+      borderWidth: '10px 10px 10px 0',
+      borderColor: `transparent ${lightTextColor} transparent transparent`,
+    },
   },
   '&[data-flipped="true"]::after': {
     ...(alignRight
@@ -93,11 +119,17 @@ export const experienceSectionTechItemStyle = (alignRight: boolean) => css({
       : {
           borderColor: `transparent transparent transparent ${darkContrastTextColor}`,
         }),
+    [mq.lt.l]: {
+      borderColor: `transparent ${darkContrastTextColor} transparent transparent`,
+    },
   },
 });
 
 export const experienceSectionTechItemCardWrapperStyle = css({
   width: '50%',
+  [mq.lt.l]: {
+    width: '100%',
+  },
 });
 
 export const experienceSectionTechItemCardStyle = css(experienceCardStyle, {
@@ -138,7 +170,9 @@ export const experienceSectionTechItemCardResponsibilitiesListStyle = css({
 export const experienceSectionFlipCardContainerStyle = (alignRight: boolean) => css({
   perspective: 1000,
   cursor: 'pointer',
-  padding: alignRight ? '0 0 0 40px' : '0 40px 0 0',
+  [mq.gt.m]: {
+    padding: alignRight ? '0 0 0 40px' : '0 40px 0 0',
+  },
 });
 
 export const experienceSectionFlipCardInnerStyle = (flipped: boolean) => css({
@@ -181,7 +215,10 @@ export const experienceSectionNonTechListStyle = css({
   display: 'flex',
   gap: 20,
   flex: 1,
-  width: '100%'
+  width: '100%',
+  [mq.lt.m]: {
+    flexDirection: 'column',
+  },
 });
 
 export const experienceSectionNonTechItemStyle = css(experienceCardStyle, {
@@ -190,4 +227,5 @@ export const experienceSectionNonTechItemStyle = css(experienceCardStyle, {
   flexDirection: 'column',
   gap: 12,
   opacity: 0.9,
+  color: 'black',
 });
