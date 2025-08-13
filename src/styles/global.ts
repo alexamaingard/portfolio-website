@@ -117,7 +117,7 @@ export const globalStyle = css(`
   }
 `);
 
-export const globalStyleBase = (theme: Theme) => css`
+export const globalStyleBase = (theme: Theme, loaded: boolean) => css`
   :root {
     --page-gap: 150px;
   }
@@ -128,12 +128,6 @@ export const globalStyleBase = (theme: Theme) => css`
     100% { background-position-x: 1000px; }
   }
 
-  /* Playful bubbles animation */
-  @keyframes bubbleFloat {
-    0% { transform: translateY(0) translateX(0); opacity: 1; }
-    100% { transform: translateY(-200px) translateX(100px); opacity: 0; }
-  }
-
   body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
@@ -142,7 +136,7 @@ export const globalStyleBase = (theme: Theme) => css`
     color: ${theme.text};
     min-height: 100vh;
     position: relative;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: ${loaded ? 'background-color 0.5s ease, color 0.5s ease' : 'none'};
   }
 
   /* Mode-specific background layers */

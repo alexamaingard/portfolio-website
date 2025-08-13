@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/Contact';
@@ -19,11 +19,17 @@ export default function App() {
   const [mode, setMode] = useState<'calm' | 'playful'>('calm');
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   const theme = mode === 'calm' ? calmTheme : playfulTheme;
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
+      <GlobalStyles loaded={loaded} />
       <Header />
       <ModeSidebar
         mode={mode}
