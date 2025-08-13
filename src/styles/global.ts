@@ -117,7 +117,7 @@ export const globalStyle = css(`
   }
 `);
 
-export const globalStyleBase = (theme: Theme, loaded: boolean) => css`
+export const globalStyleBase = (theme: Theme) => css`
   :root {
     --page-gap: 150px;
   }
@@ -136,7 +136,6 @@ export const globalStyleBase = (theme: Theme, loaded: boolean) => css`
     color: ${theme.text};
     min-height: 100vh;
     position: relative;
-    transition: ${loaded ? 'background-color 0.5s ease, color 0.5s ease' : 'none'};
   }
 
   /* Mode-specific background layers */

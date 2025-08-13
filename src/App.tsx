@@ -19,17 +19,11 @@ export default function App() {
   const [mode, setMode] = useState<'calm' | 'playful'>('calm');
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
   const theme = mode === 'calm' ? calmTheme : playfulTheme;
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles loaded={loaded} />
+      <GlobalStyles />
       <Header />
       <ModeSidebar
         mode={mode}
