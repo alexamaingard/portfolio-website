@@ -1,3 +1,5 @@
+import { useTheme } from '@emotion/react';
+
 import { PortfolioItem } from '../../interfaces';
 import {
   portfolioSectionProjectItemImageStyle,
@@ -7,7 +9,6 @@ import {
   portfolioSectionProjectItemStyle,
 } from '../../styles/portfolioSection';
 import GithubIcon from '../../assets/icons/github.svg?react';
-import { useTheme } from '@emotion/react';
 
 export const PortfolioListItem = ({
   name,

@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+
 import { NON_TECH_EXPERIENCE, TECH_EXPERIENCE } from '../consts';
 import {
   experienceSectionStyle,

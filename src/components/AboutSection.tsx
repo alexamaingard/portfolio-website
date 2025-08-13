@@ -1,3 +1,5 @@
+import { useTheme } from '@emotion/react';
+
 import {
   aboutInfoContentStyle,
   aboutInfoPersonalIntroHobbiesContainerStyle,
@@ -17,7 +19,6 @@ import CoffeeIcon from '../assets/icons/coffeeMug.svg?react';
 import DogIcon from '../assets/icons/dog.svg?react';
 import GamingIcon from '../assets/icons/gaming.svg?react';
 import PlantIcon from '../assets/icons/plant.svg?react';
-import { useTheme } from '@emotion/react';
 
 export const AboutSection = () => {
   const theme = useTheme();

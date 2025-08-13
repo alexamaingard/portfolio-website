@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+
 import { introPageDescriptionStyle, introPageGreetingStyle, introPageInfoStyle, introPageMainTitleStyle, introPageStyle, introPageSubtitleStyle, letterWithCursorStyle } from '../styles/introPage';
 
 export const IntroPage = () => {

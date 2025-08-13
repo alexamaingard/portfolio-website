@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+
 import { PORTFOLIO_PROJECTS } from '../consts';
 import { portfolioSectionProjectsListStyle, portfolioSectionStyle } from '../styles/portfolioSection';
 import { sectionTitleStyle } from '../styles/shared';

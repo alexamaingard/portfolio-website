@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+
 import { footerStyle } from '../styles/footer';
 
 export const Footer = () => {

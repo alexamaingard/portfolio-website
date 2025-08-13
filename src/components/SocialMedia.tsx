@@ -1,9 +1,10 @@
+import { useTheme } from '@emotion/react';
+
 import { iconItemStyle, socialMediaIconListStyle, socialMediaStyle } from '../styles/socialMedia';
 import EmailIcon from '../assets/icons/email.svg?react';
 import GithubIcon from '../assets/icons/github.svg?react';
 import LinkedInIcon from '../assets/icons/linkedIn.svg?react';
 import { CONTACT } from '../consts';
-import { useTheme } from '@emotion/react';
 
 export const SocialMedia = () => {
   const theme = useTheme();
