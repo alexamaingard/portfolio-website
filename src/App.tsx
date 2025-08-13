@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/Contact';
