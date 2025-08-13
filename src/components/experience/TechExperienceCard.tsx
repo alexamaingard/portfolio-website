@@ -26,7 +26,7 @@ export const TechExperienceCard = ({
   responsibilities,
   index,
 }: TechExperienceItem & { index: number }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped] = useState(false);
   const alignRight = !(index % 2);
 
   return (
@@ -34,12 +34,12 @@ export const TechExperienceCard = ({
       <div css={experienceSectionTechItemCardWrapperStyle}>
         <div
           css={experienceSectionFlipCardContainerStyle(alignRight)}
-          onClick={() => setIsFlipped(!isFlipped)}
+          // onClick={() => setIsFlipped(!isFlipped)}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') setIsFlipped(!isFlipped);
-          }}
+          // onKeyDown={(e) => {
+          //   if (e.key === 'Enter' || e.key === ' ') setIsFlipped(!isFlipped);
+          // }}
           aria-pressed={isFlipped}
         >
           <div css={experienceSectionFlipCardInnerStyle(isFlipped)}>

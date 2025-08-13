@@ -169,7 +169,7 @@ export const experienceSectionTechItemCardResponsibilitiesListStyle = css({
 // Flip styles
 export const experienceSectionFlipCardContainerStyle = (alignRight: boolean) => css({
   perspective: 1000,
-  cursor: 'pointer',
+  // cursor: 'pointer',
   [mq.gt.m]: {
     padding: alignRight ? '0 0 0 40px' : '0 40px 0 0',
   },
