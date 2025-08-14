@@ -12,7 +12,7 @@ export const introPageStyle = css({
   minHeight: 600,
   maxWidth: 1168,
   [mq.lt.s]: {
-    paddingTop: 120,
+    paddingTop: 100,
   },
 });
 

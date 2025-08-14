@@ -48,6 +48,7 @@ export const portfolioSectionProjectItemInfoStyle = (theme: Theme) => css({
   },
   color: theme.descriptionColor,
   fontSize: 16,
+  fontWeight: 300,
   [mq.l]: {
     maxWidth: 500,
   },

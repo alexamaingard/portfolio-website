@@ -16,7 +16,7 @@ export const pageMarginStyle = css({
     paddingInline: 120,
   },
   [mq.lt.s]: {
-    paddingInline: 60,
+    paddingInline: '55px 25px',
   },
 });
 

@@ -1,6 +1,7 @@
 import { css, Theme } from '@emotion/react';
 
 import { lightTextColor } from './consts';
+import { mediaQueries as mq } from './mediaQueries';
 
 export const contactSectionStyle = css({
 });
@@ -21,5 +22,8 @@ export const contactSectionContentStyle = (theme: Theme) => css({
     width: 'fit-content',
     padding: '8px 20px',
     cursor: 'pointer',
+  },
+  [mq.lt.s]: {
+    fontSize: 16,
   },
 });
