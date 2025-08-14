@@ -2,15 +2,14 @@ import { css, keyframes, Theme } from '@emotion/react';
 
 import { subtitle, title1, title2, title3, whiteTextColor } from './consts';
 import { mediaQueries as mq, smallSmartphoneMediaQuery } from './mediaQueries';
-import { title2Style } from './shared';
+import { sectionSpacingStyle, title2Style } from './shared';
 
-export const introPageStyle = css({
+export const introPageStyle = css(sectionSpacingStyle, {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   height: '100vh',
   minHeight: 600,
-  maxWidth: 1168,
   [mq.lt.s]: {
     paddingTop: 100,
   },

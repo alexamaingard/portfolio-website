@@ -3,9 +3,11 @@ import { css, Theme } from '@emotion/react';
 import { subtitle, title2, whiteTextColor } from './consts';
 import { mediaQueries as mq } from './mediaQueries';
 
-export const pageMarginStyle = css({
-  paddingInline: 280,
+export const mainContentStyle = css({
   width: '100%',
+  [mq.lt.xl]: {
+    paddingInline: 280,
+  },
   [mq.lt.l]: {
     paddingInline: 200,
   },
@@ -23,7 +25,8 @@ export const pageMarginStyle = css({
 export const sectionSpacingStyle = css({
   paddingBlock: 100,
   maxWidth: 1168,
-  [mq.lt.l]: {
+  [mq.gt.l]: {
+    margin: 'auto',
   },
   [mq.lt.m]: {
     paddingBlock: 60,

@@ -9,7 +9,7 @@ import { IntroPage } from './components/IntroPage';
 import { PortfolioSection } from './components/PortfolioSection';
 import { SocialMedia } from './components/SocialMedia';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { pageMarginStyle } from './styles/shared';
+import { mainContentStyle } from './styles/shared';
 import { ModeSidebar } from './components/mode/ModeSidebar';
 import { ThemeProvider } from '@emotion/react';
 import { calmTheme, playfulTheme } from './styles/themes';
@@ -32,7 +32,7 @@ export default function App() {
         toggleOpen={() => setSidebarOpen(!sidebarOpen)}
       />
       {mode === 'playful' && <ConstellationBackground />}
-      <main css={pageMarginStyle}>
+      <main css={mainContentStyle}>
         <SocialMedia />
         <IntroPage />
           <AboutSection />

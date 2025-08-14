@@ -3,9 +3,6 @@ import { css, Theme } from '@emotion/react';
 import { lightTextColor } from './consts';
 import { mediaQueries as mq } from './mediaQueries';
 
-export const contactSectionStyle = css({
-});
-
 export const contactSectionContentStyle = (theme: Theme) => css({
   display: 'flex',
   flexDirection: 'column',
