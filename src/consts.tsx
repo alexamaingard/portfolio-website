@@ -150,6 +150,16 @@ export const NON_TECH_EXPERIENCE: Record<string, ExperienceItem> = {
 
 export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
   {
+    name: 'This Website!',
+    description: `
+      Personal portfolio and professional website to introduce myself as a full-stack software developer,
+      while also reflecting my multidisciplinary background in social media, art, and teaching.
+    `,
+    imageSrc: '/images/portfolioWebsite.png',
+    imageAlt: 'Personal Portfolio Website Landing Page',
+    url: 'https://github.com/alexamaingard/portfolio-webs',
+  },
+  {
     name: 'Migraine Witch',
     description: `
       Web app for logging migraine attacks and their symptoms, triggers, etc.
