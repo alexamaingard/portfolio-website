@@ -63,6 +63,7 @@ export const aboutSectionPictureContainerStyle = css({
     margin: '-20px 0 0 -20px',
     width: 300,
     height: 300,
+    objectFit: 'cover',
     [mq.l]: {
       width: 250,
       height: 250,

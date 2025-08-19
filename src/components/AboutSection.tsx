@@ -53,7 +53,7 @@ export const AboutSection = () => {
           </div>
         </div>
         <div css={aboutSectionPictureContainerStyle}>
-          <img src='/images/lexy.jpg' alt="profile pic" />
+          <img src='/images/alexa.jpg' alt="profile pic" />
         </div>
       </div>
       <div css={aboutSectionTechListContainerStyle}>
