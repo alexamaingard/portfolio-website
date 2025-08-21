@@ -159,7 +159,7 @@ export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
     imageSrc: '/images/startupIdeaGenerator.png',
     imageAlt: 'Silly Startup Idea Generator',
     url: 'https://github.com/alexamaingard/silly-startup-idea-generator',
-    liveDemoUrl: 'www.alexamaingard.com/startup-generator/',
+    liveDemoUrl: 'https://alexamaingard.com/startup-generator',
   },
   {
     name: 'This Website!',
