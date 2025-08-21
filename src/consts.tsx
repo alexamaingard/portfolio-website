@@ -150,14 +150,27 @@ export const NON_TECH_EXPERIENCE: Record<string, ExperienceItem> = {
 
 export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
   {
+    name: 'Silly Startup Idea Generator',
+    description: `
+      A whimsical web app that generates absurd startup ideas like “Next-gen Delivery App for Time-traveling Hamsters”.
+      The generator mashes together buzzwords, audiences, and formats.
+    `,
+    objective: 'Learning Tailwind.',
+    imageSrc: '/images/startupIdeaGenerator.png',
+    imageAlt: 'Silly Startup Idea Generator',
+    url: 'https://github.com/alexamaingard/silly-startup-idea-generator',
+    liveDemoUrl: 'www.alexamaingard.com/startup-generator/',
+  },
+  {
     name: 'This Website!',
     description: `
       Personal portfolio and professional website to introduce myself as a full-stack software developer,
       while also reflecting my multidisciplinary background in social media, art, and teaching.
     `,
+    objective: 'Showcase my full-stack skills and multidisciplinary creative journey.',
     imageSrc: '/images/portfolioWebsite.png',
     imageAlt: 'Personal Portfolio Website Landing Page',
-    url: 'https://github.com/alexamaingard/portfolio-webs',
+    url: 'https://github.com/alexamaingard/portfolio-website',
   },
   {
     name: 'Migraine Witch',
@@ -165,6 +178,7 @@ export const PORTFOLIO_PROJECTS: PortfolioItem[] = [
       Web app for logging migraine attacks and their symptoms, triggers, etc.
       It's main purpose is to help migraine patients understand their condition and pain better.
     `,
+    objective: 'Final graduation project for Boolean UK Bootcamp.',
     imageSrc: '/images/migraineWitchHomepage.png',
     imageAlt: 'Migraine Witch Project Homepage',
     url: 'https://github.com/alexamaingard/migraine-witch',

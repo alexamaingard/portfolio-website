@@ -25,4 +25,7 @@ export interface PortfolioItem {
   imageSrc: string;
   imageAlt: string;
   url: string;
+  objective?: string;
+  technologies?: string;
+  liveDemoUrl?: string;
 }

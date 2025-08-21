@@ -57,15 +57,21 @@ export const portfolioSectionProjectItemInfoStyle = (theme: Theme) => css({
   },
 });
 
+export const portfolioSectionProjectItemInfoLinksContainerStyle = css({
+  display: 'flex',
+  gap: 20,
+});
+
 export const portfolioSectionProjectItemInfoUrlStyle = css({
   textDecoration: 'none',
   color: lightTextColor,
   display: 'flex',
   gap: 8,
   alignItems: 'center',
-  '>svg': {
-    fill: lightTextColor,
-  },
+});
+
+export const portfolioSectionProjectItemGithubIconStyle = css({
+  fill: lightTextColor,
 });
 
 const portfolioImageSize = css({
