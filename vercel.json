@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/startup-generator/(.*)",
+      "destination": "https://silly-startup-idea-generator-git-main-alexamaingards-projects.vercel.app/$1"
+    },
+    {
+      "source": "/startup-generator",
+      "destination": "https://silly-startup-idea-generator-git-main-alexamaingards-projects.vercel.app/"
+    }
+  ]
+}
