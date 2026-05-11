@@ -11,7 +11,6 @@ export const ContactSection = () => {
     <section id='contact' css={sectionSpacingStyle}>
       <h2 css={sectionTitleStyle(theme)}>Contact</h2>
       <div css={contactSectionContentStyle(theme)}>
-        I'm currently open to new opportunities and excited about the next challenge — whether it's building something meaningful or joining a great team.
         My inbox is always open, even if you just want to say hi!
         <button onClick={onContactClick}>
           Say hi
