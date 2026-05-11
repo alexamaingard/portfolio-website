@@ -53,7 +53,7 @@ export const TechExperienceCard = ({
                   {location}
                 </span>
                 <span>
-                  {formatToMonthYear(startDate as string)} - {formatToMonthYear(endDate as string) || _('Ongoing')}
+                  {formatToMonthYear(startDate as string)} - {endDate ? formatToMonthYear(endDate as string) : _('Ongoing')}
                   {periodComment && ` (${periodComment})`}
                 </span>
               </div>

@@ -8,7 +8,7 @@ export interface TechExperienceItem extends BaseExperienceItem {
   company: string;
   location: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
   countryCode: CountryCode;
   periodComment?: string;
   responsibilities: string[];
