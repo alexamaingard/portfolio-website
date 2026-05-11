@@ -1,8 +1,8 @@
 import { css, Theme } from '@emotion/react';
 
 import { lightTextColor, mainText } from './consts';
-import { sectionSpacingStyle } from './shared';
 import { mediaQueries as mq } from './mediaQueries';
+import { sectionSpacingStyle } from './shared';
 
 export const portfolioSectionStyle = css(sectionSpacingStyle, {
   display: 'flex',
@@ -13,10 +13,6 @@ export const portfolioSectionStyle = css(sectionSpacingStyle, {
 export const portfolioSectionProjectsListStyle = css({
   display: 'flex',
   flexDirection: 'column',
-  paddingBlock: '40px 100px',
-  [mq.lt.m]: {
-    paddingBlock: '40px 0',
-  },
 });
 
 export const portfolioSectionProjectItemStyle = (alignRight: boolean) => css({
