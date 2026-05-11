@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <div css={footerStyle(theme)}>
-      Copyright 2025 &#169; Alexa Maingard
+      Copyright 2026 &#169; Alexa Maingard
     </div>
   );
 };
