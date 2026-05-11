@@ -20,7 +20,7 @@ export const calmTheme = {
 export const playfulTheme = {
   background: '#1b1f3a',
   text: '#ffffff',
-  accent: '#88ffff',
+  accent: '#ff4f9d',
   highlight: '#ff4f9d',
   meshStroke: 'rgba(255,255,255,0.15)',
   meshAnimation: 'drift 20s linear infinite',
