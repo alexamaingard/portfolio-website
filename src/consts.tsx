@@ -89,6 +89,22 @@ export const TECHNOLOGIES = {
 };
 
 export const TECH_EXPERIENCE: Record<string, TechExperienceItem> = {
+  CORDYS: {
+    position: 'Full-Stack Software Developer',
+    company: 'Cordys Switzerland AG',
+    location: 'Zürich, CH (Hybrid)',
+    countryCode: 'CH',
+    startDate: '2025-09-01',
+    responsibilities: [
+      'Responsible for building the frontend application from scratch (React, TypeScript, Tailwind CSS, Emotion, Vite), including UI/UX design, authentication flows, and RESTful API integration',
+      'Backend development with Python, PostgreSQL, and Qdrant (basic involvement) for relational and vector storage, including schema migrations with Alembic and data pipeline development',
+      'Basic containerization tasks, CI/CD pipelines, and deployment infrastructure using Docker, ArgoCD, and Kubernetes, including setup and maintenance of DEV and UAT environments',
+      'Creation of system architecture documentation, API references, and operational runbooks for team knowledge sharing',
+      'Onboarding and mentoring of a new backend engineers, with technical oversight responsibility during trial period',
+      'Direct engagement with C-level stakeholders and customers on requirements, technical direction, and delivery',
+    ],
+    technologies: 'TypeScript, React, Emotion, Vite, Tailwind CSS, Python, PostgreSQL, Alembic, Docker, ArgoCD, Kubernetes',
+  },
   ESAVE: {
     position: 'Full-Stack Software Developer',
     company: 'esave ag',
